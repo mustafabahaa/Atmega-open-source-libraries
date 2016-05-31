@@ -15,7 +15,7 @@
 ** move to Lcdconfig.h to adjust the pin configuration as your current
 ** circuit.
    
-/* R/S bit is low when writing command , high if data */
+** R/S bit is low when writing command , high if data */
 /* R/W bit is low when writing and high when reading  */
 /* E bit must be toggled with each instruction in order to refresh LCD*/
 /* -----------------------------------------------------------------------------*/
@@ -57,7 +57,7 @@ void Lcd_displayString(s8_t *string)
 }
 
 
-void gotoXY(u8_t row , u8_t col)
+void Lcd_gotoXY(u8_t row , u8_t col)
 {
 	if ( row ==  0 )
 	{
@@ -131,7 +131,7 @@ void LCD_intialization()
 	/* making RS in command and R/W as write */
 	CLR_BIT(LCD_Control_PORT,RS);
 	CLR_BIT(LCD_Control_PORT,RW);
-	/* Intialize LCD pins low */
+	/* Initialize LCD pins low */
 	LCD_PORT = MSB_LWO;
 	
 	Lcd_send_command(HOME_SCREEN); 							
