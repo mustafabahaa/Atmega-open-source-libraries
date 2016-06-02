@@ -22,23 +22,30 @@
 ** -------------------------------------------------------------------------------
 ** highly important note 
 ** -------------------------------------------------------------------------------
+** Note1 :
 ** ROW_1 pin must be lower than ROW_2 , and thats is applyed to all pins meaning
 ** that you cant set ROW_4 as PA0 and ROW_1 as PA3 that won't give you the 
 ** required output and in fact will miss all program , same as for columns 
 ** it is recommend to configure the pin as this orginial libarary.
+** Note2 :
+** the total number of rows + col must be = 8 that means if you add 3 rows 
+** you can add up two 5 columns and if you have 4 rows then you can add up
+** to 4 columns , if rows + col > 8 no problem but it canot be otherwise
 --------------------------------------------------------------------------------*/
 
 #ifndef KEYPADCONFIG_H_
 #define KEYPADCONFIG_H_
 
 
-/* configure  your row pins */
+/* configure  your row pins*/
+/* comment any line if you don't have 4 rows*/
 #define ROW_1 PA0
 #define ROW_2 PA1
 #define ROW_3 PA2
 #define ROW_4 PA3
 
 /* configure  your columns pins */
+/* comment any line if you don't have 4 columns*/
 #define COL_1 PA4
 #define COL_2 PA5
 #define COL_3 PA6

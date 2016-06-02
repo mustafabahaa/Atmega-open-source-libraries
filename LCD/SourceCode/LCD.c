@@ -5,27 +5,26 @@
 **
 ** <LCD.c
 ** <this is the functions implmentations of the library LCD.H , these functions
-    are good for audience who are new to micro-controllers and writing libraries>
+**  are good for audience who are new to micro-controllers and writing libraries>
 **
 ** Author: <Mustafa Bahaa>
-** -----------------------------------------------------------------------------*/
-/*Comments*/
-/* in order to understand the code please read the function decription
+** -------------------------------------------------------------------------------
+** Comments : 
+** in order to understand the code please read the function decription
 ** at LCD.h also read the following control bits information , also 
 ** move to Lcdconfig.h to adjust the pin configuration as your current
 ** circuit.
-   
-** R/S bit is low when writing command , high if data */
-/* R/W bit is low when writing and high when reading  */
-/* E bit must be toggled with each instruction in order to refresh LCD*/
-/* -----------------------------------------------------------------------------*/
+** -------------------------------------------------------------------------------
+** R/S bit is low when writing command , high if data 
+** R/W bit is low when writing and high when reading  
+** E bit must be toggled with each instruction in order to refresh LCD
+** -----------------------------------------------------------------------------*/
   
 #include "LCD.h"
 #include "lcd_config.h"
 
 
 /* the following functions works for 4bit mode and 8bit mode */
-
 void Lcd_Enable ()
 {
 	CLR_BIT(LCD_Control_PORT,E);

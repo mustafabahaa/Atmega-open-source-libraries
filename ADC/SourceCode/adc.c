@@ -3,10 +3,10 @@
 ** support, and with no warranty, express or implied, as to its usefulness for
 ** any purpose.
 **
-** <ADC.c
-** <this is the functions implmentations of the library ADC.H , analog to digital
-    converter are good for audience who are new to micro-controllers and writing
-	libraries , also it contains the 8-bit mode and 10-bit mode >
+**  ADC.c
+**  this is the functions implmentations of the library ADC.H , analog to digital
+**  converter are good for audience who are new to micro-controllers and writing
+**	libraries , also it contains the 8-bit mode and 10-bit mode 
 **
 ** Author: <Mustafa Bahaa>
 ** -----------------------------------------------------------------------------*/

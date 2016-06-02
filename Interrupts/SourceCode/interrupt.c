@@ -1,30 +1,91 @@
-/*
- * interrupt.c
- *
- * Created: 3/18/2016 2:16:55 AM
- *  Author: Mustafa
- */ 
+/* -------------------------------------------------------------------------------
+** This software is in the public domain, furnished "as is", without technical
+** support, and with no warranty, express or implied, as to its usefulness for
+** any purpose.
+**
+**  interrupt.c
+**  this is the functions implmentation of interrupt.h please head to your 
+**  interrupt and begin to implement the interrupt routine immediatly in 
+**  one of the ready functions
+**
+** Author: <Mustafa Bahaa>
+** -----------------------------------------------------------------------------*/
 
 #include "interrupt.h"
+#include "standardTypes.h"
+#include "macros.h"
 
-void interrupt_intialization(s8_t interrupt_name )
+void interrupt_intialization()
 {
-	sei();
-	MCUCR |= (1<<ISC11) | (1<<ISC10);
+	/*the global interrupt mask*/
+	sei();	
 	
-	if (interrupt_name == INT0)
-	{
-		GICR |= (1<<INT0);
-	}
-	else if (interrupt_name == INT1)
-	{
-		GICR |= (1<<INT1);
-	}
-	else if (interrupt_name == INT2)
-	{
-		GICR |= (1<<INT2);
-	}
+	////////////////////////////////////
+	#if INT0
+		/* Active INT0 interrupt*/
+		SET_BIT(GICR,INT0);
+		
+		/*choosing interrupt modes*/
 	
+		#if RISING_EDGE 
+			/*at rising edge*/
+			SET_BIT(MCUCR,ISC01);
+			SET_BIT(MCUCR,ISC00);
+	
+		#elif FALLING_EDGE 
+			/*at falling edge*/
+			SET_BIT(MCUCR,ISC01);
+			CLR_BIT(MCUCR,ISC00);
+	
+		#elif CHANGE_EDGE
+			/*at any change edge*/
+			SET_BIT(MCUCR,ISC01);
+			SET_BIT(MCUCR,ISC00);
+		#endif	/* modes of operations */
+	/////////////////////////////////////
+	
+	/////////////////////////////////////
+	#elif INT1
+		/* Active INT1 interrupt*/
+		SET_BIT(GICR,INT1);
+		
+		/*choosing interrupt modes*/
+		
+		#if RISING_EDGE 	
+			/*at rising edge*/
+			SET_BIT(MCUCR,ISC11);
+			SET_BIT(MCUCR,ISC10);
+	
+		#elif FALLING_EDGE 
+			/*at falling edge*/
+			SET_BIT(MCUCR,ISC11);
+			CLR_BIT(MCUCR,ISC10);
+	
+		#elif CHANGE_EDGE
+			/*at any change edge*/
+			SET_BIT(MCUCR,ISC11);
+			SET_BIT(MCUCR,ISC10);
+		#endif	/* modes of operations */ 
+	/////////////////////////////////////////
+
+    /////////////////////////////////////////	
+	#elif INT2	
+			/* Active INT2 interrupt*/
+			SET_BIT(GICR,INT2);
+		
+			/*choosing interrupt modes*/
+		
+		#if RISING_EDGE 		
+			/*at rising edge*/
+			SET_BIT(MCUCR,ISC2);
+	
+		#elif FALLING_EDGE 
+			/*at falling edge*/
+			CLR_BIT(MCUCR,ISC2);
+		#endif	/* modes of operations */
+	/////////////////////////////////////////
+	
+    #endif  /*external interrupt number*/
 }
 
 

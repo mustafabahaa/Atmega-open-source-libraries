@@ -3,9 +3,9 @@
 ** support, and with no warranty, express or implied, as to its usefulness for
 ** any purpose.
 **
-** <LCD.h
-** <This is the configurations file for LCD to quickly adjust the pins 
-    just like your pin configuration without changing the code over and over>
+**  LCD.h
+**  This is the configurations file for LCD to quickly adjust the pins 
+**  just like your pin configuration without changing the code over and over
 **
 ** Author: <Mustafa Bahaa>
 ** -------------------------------------------------------------------------*/
@@ -15,7 +15,6 @@
 #define LCD_CONFIG_H_
 
 /* LCD port configurations */
-
 #define LCD_PORT PORTC
 #define LCD_DDR  DDRC
 
@@ -37,6 +36,8 @@
 #define LCD_DDR   DDRC
 #define LCD_PORT  PORTC
 
+/*control pins means RS , RW ,E*/
+/*must be on the same port     */
 #define LCD_Control_PORT PORTD
 #define LCD_Control_DDR  DDRD
 

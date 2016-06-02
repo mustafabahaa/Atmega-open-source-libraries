@@ -1,12 +1,15 @@
-/*
- * StandardTypes.h
- *
- * Created: 3/18/2016 2:26:23 AM
- *  Author: Mustafa
- */ 
+/* -------------------------------------------------------------------------------
+** This software is in the public domain, furnished "as is", without technical
+** support, and with no warranty, express or implied, as to its usefulness for
+** any purpose.
+**
+** StandardTypes.h
+** Author: <Mustafa Bahaa>
+** ------------------------------------------------------------------------------*/
 
 #ifndef STANDARDTYPES_H_              // if standard Types not defined
 #define STANDARDTYPES_H_              // Define standard types
+
 //////////////////////////////////////////////////////////////////////
 typedef unsigned char         u8_t;   // Define unsigned char as U8_t
 typedef char                  s8_t;   // Define  char as S8_t

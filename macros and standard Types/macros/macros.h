@@ -1,20 +1,22 @@
+/* -------------------------------------------------------------------------------
+** This software is in the public domain, furnished "as is", without technical
+** support, and with no warranty, express or implied, as to its usefulness for
+** any purpose.
+**
+** macros.h
+** this is the most common macros and defines
+**
+** Author: <Mustafa Bahaa>
+** -----------------------------------------------------------------------------*/
+
 
 #ifndef INCFILE1_H_
 #define INCFILE1_H_
 
+
 #define SET_BIT(var,bit)    ( var|= (1<<bit) )  // Define SET BIT macro
 #define CLR_BIT(var,bit)    ( var&=~(1<<bit) )  // Define CLR BIT macro
 #define TOGGLE_BIT(var,bit) ( var^=(1<<bit)  )  // Define Toggle macro
-
-#define MSB_INPUT  0xF0
-#define MSB_OUTPUT 0xF0
-#define MSB_HIGH   0xF0
-#define MSB_LWO    0xF0
-
-#define LSB_INPUT  0x0F
-#define LSB_OUTPUT 0x0F
-#define LSB_HIGH   0x0F
-#define LSB_LWO    0x0F
 
 
 #define ALL_INPUT    0x00
