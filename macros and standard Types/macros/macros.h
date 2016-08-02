@@ -14,9 +14,17 @@
 #define INCFILE1_H_
 
 
-#define SET_BIT(var,bit)    ( var|= (1<<bit) )  // Define SET BIT macro
-#define CLR_BIT(var,bit)    ( var&=~(1<<bit) )  // Define CLR BIT macro
-#define TOGGLE_BIT(var,bit) ( var^=(1<<bit)  )  // Define Toggle macro
+#define        SET_BIT(var,bit)			    (var|= (1<<bit))  
+#define DOUBLE_SET_BIT(var,bit,bit2)        (var|= (1<<bit) | (1<<bit2))
+#define TRIBLE_SET_BIT(var,bit,bit2,bit3)   (var|= (1<<bit) | (1<<bit2) | (1<<bit3))
+
+
+#define		   CLR_BIT(var,bit)			     (var&=~(1<<bit)) 
+#define DOUBLE_CLR_BIT(var,bit,bit2)         (var&=~(1<<bit) & ~(1<<bit2)) 
+#define TRIBLE_CLR_BIT(var,bit,bit2,bit3)    (var&=~(1<<bit) & ~(1<<bit2) & ~(1<<bit3))
+
+
+#define TOGGLE_BIT(var,bit) ( var^=(1<<bit))  
 
 
 #define ALL_INPUT    0x00
