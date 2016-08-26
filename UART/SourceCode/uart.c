@@ -33,13 +33,13 @@ void uart_intialization()
 	   why we use the function lrint from math.h , example 
 	   if the value is 25.5 UBBR_value will equal to 26 */
 	
-	u8_t UBBR_value = lrint((F_CPU / (16L * BAUD) ) - 1);	
+	u16_t UBBR_value = lrint((F_CPU / (16L * BAUD) ) - 1);	
 	
 	/* installing the deduced baud rate into register UBBR
 	   and that is done by UBBRH and UBBRL because the value 
 	   could be more than 255 (8-bit value) */
-	UBRRH = UBBR_value >> 8;
-    UBRRL = UBBR_value;	
+	UBRRH = (u8_t) UBBR_value >> 8;
+    UBRRL = (u8_t) UBBR_value;	
 	
 	#if PARITY_MODE_EVEN
 	/* set parity mode to even parity */
